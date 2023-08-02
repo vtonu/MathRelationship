@@ -1,3 +1,6 @@
+![image](https://github.com/vtonu/MathRelationship/assets/56773210/f69a1b9b-34f6-4304-bb1b-ed729ef41f6b)
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
