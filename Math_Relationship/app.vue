@@ -39,7 +39,7 @@
         />
       </UDropdown>
     </UContainer>
-    <UContainer class="m-8"><URange v-model="value" size="sm" /></UContainer>
+    <UContainer class="m-8"><URange v-model="value" size="lg" /></UContainer>
     <div>
       <h1>Color mode: {{ $colorMode.value }}</h1>
       <select v-model="$colorMode.preference">
@@ -49,6 +49,11 @@
         <option value="sepia">Sepia</option>
       </select>
     </div>
+    <UContainer class="m-8 mx-4 border border-1 border-gray-300 rounded-lg">
+      <div>
+        <canvas id="fireworks" ref="fireworksCanvas"></canvas>
+      </div>
+    </UContainer>
   </UContainer>
 </template>
 
@@ -83,4 +88,24 @@ const items = [
     },
   ],
 ];
+
+const { $anime } = useNuxtApp();
+
+onMounted(() => {
+  $anime({ targets: '.title', translateX: 250, duration: 800 });
+});
+
+// Fireworks
+import { ref, onMounted } from 'vue';
+
+const fireworksCanvasRef = ref(null);
+
+onMounted(() => {
+  // Get the actual canvas element using the ref
+  const canvasEl = fireworksCanvasRef.value;
+  if (canvasEl) {
+    setCanvasSize(canvasEl);
+    autoClick(canvasEl);
+  }
+});
 </script>
