@@ -38,15 +38,15 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
-      <div>
-        <!-- <h1>Color mode: {{ $colorMode.value }}</h1> -->
+      <!--       <div>
+        <h1>Color mode: {{ $colorMode.value }}</h1>
         <select v-model="$colorMode.preference">
           <option value="system">System</option>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="sepia">Sepia</option>
         </select>
-      </div>
+      </div> -->
     </UContainer>
     <UContainer class="m-4"><URange v-model="value" size="lg" /></UContainer>
     <UAlert color="lime" variant="subtle" class="m-4">
@@ -94,6 +94,7 @@ const items = [
 ];
 
 // Animejs
+import anime from 'animejs/lib/anime.es.js';
 const { $anime } = useNuxtApp();
 onMounted(() => {
   $anime({ targets: '.title', translateX: 250, duration: 800 });
