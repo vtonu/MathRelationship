@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="m-4 mx-8 border border-1 border-gray-200 rounded-lg">
+  <UContainer class="m-8 mx-8 border border-1 border-gray-200 rounded-lg">
     <UContainer>
       <UButton
         @click="playAnimation"
@@ -21,13 +21,6 @@
         :trailing="true"
         class="m-2"
       />
-      <!--       <UToggle
-        class="m-2"
-        size="sm"
-        on-icon="i-heroicons-check-20-solid"
-        off-icon="i-heroicons-x-mark-20-solid"
-        v-model="selected"
-      /> -->
       <UDropdown
         class="m-2"
         :items="items"
@@ -39,30 +32,22 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
-      <!--       <div>
-        <h1>Color mode: {{ $colorMode.value }}</h1>
-        <select v-model="$colorMode.preference">
-          <option value="system">System</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-          <option value="sepia">Sepia</option>
-        </select>
-      </div> -->
+      <UToggle
+        class="m-2"
+        size="sm"
+        on-icon="i-heroicons-check-20-solid"
+        off-icon="i-heroicons-x-mark-20-solid"
+        v-model="selected"
+      />
       <URange v-model="value" size="sm" />
     </UContainer>
     <UAlert color="primary" variant="subtle" class="my-4">
       <template #description>
-        <h1 class="title">1 <br /><br /></h1>
-        <h1 class="title">2 <br /><br /></h1>
-        <h1 class="title">3 <br /><br /></h1>
-        <h1 class="title">4 <br /><br /></h1>
-        <h1 class="title">5 <br /><br /></h1>
-        <h1 class="title">6 <br /><br /></h1>
-        <h1 class="title">7 <br /><br /></h1>
-        <h1 class="title">8 <br /><br /></h1>
-        <h1 class="title">9 <br /><br /></h1>
-        <h1 class="title">10 <br /><br /></h1>
-        <canvas id="title" ref="fireworksCanvas"></canvas>
+        <div>
+          <h1 class="title">1 <br /><br /></h1>
+          <h1 class="title">2 <br /><br /></h1>
+          <h1 class="title">3 <br /><br /></h1>
+        </div>
       </template>
     </UAlert>
   </UContainer>
@@ -72,7 +57,7 @@
 // Toggle
 const selected = ref(true);
 // Range slider
-const value = ref(20);
+const value = ref(30);
 
 // Dropdown for color mode
 import { ref } from 'vue';
@@ -112,26 +97,16 @@ const items = [
 
 // Animejs
 const { $anime } = useNuxtApp();
-// Keyframes for the animation
-const keyframes = [
-  { translateX: 0 }, // Starting point
-  { translateX: 300 }, // Ending point
-];
+
 // Play animation when TEST button is clicked
 const playAnimation = () => {
   // Use Anime.js keyframes to create the animation
   $anime({
     targets: '.title',
-    keyframes,
-    duration: 1000,
+    translateX: 250,
     direction: 'alternate',
     loop: true,
-    delay: function (el, i, l) {
-      return i * 100;
-    },
-    endDelay: function (el, i, l) {
-      return (l - i) * 10;
-    },
+    easing: 'cubicBezier(.5, .05, .1, .3)',
   });
 };
 </script>
