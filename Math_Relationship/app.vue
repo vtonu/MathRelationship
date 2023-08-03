@@ -1,6 +1,6 @@
 <template>
   <UContainer class="m-6 mx-6 border border-1 border-gray-300 rounded-lg">
-    <UContainer class="m-8">
+    <UContainer class="m-2">
       <UButton
         icon="i-heroicons-arrow-right-20-solid"
         size="sm"
@@ -40,18 +40,20 @@
       </UDropdown>
     </UContainer>
     <UContainer class="m-8"><URange v-model="value" size="lg" /></UContainer>
-    <div>
-      <h1>Color mode: {{ $colorMode.value }}</h1>
-      <select v-model="$colorMode.preference">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="sepia">Sepia</option>
-      </select>
-    </div>
-    <UContainer class="m-8 mx-4 border border-1 border-gray-300 rounded-lg">
-      <canvas id="fireworks" ref="fireworksCanvas"></canvas>
-    </UContainer>
+    <UAlert color="lime" variant="subtle" class="m-6">
+      <template #description>
+        <div>
+          <!-- <h1>Color mode: {{ $colorMode.value }}</h1> -->
+          <select v-model="$colorMode.preference">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="sepia">Sepia</option>
+          </select>
+        </div>
+        <canvas id="fireworks" ref="fireworksCanvas"></canvas>
+      </template>
+    </UAlert>
   </UContainer>
 </template>
 
@@ -207,3 +209,5 @@ function animateParticules(canvasEl, x, y) {
   autoClick(canvasEl);
 }
 </script>
+
+<style></style>
