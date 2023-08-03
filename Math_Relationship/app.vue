@@ -1,6 +1,6 @@
 <template>
-  <UContainer class="m-6 mx-6 border border-1 border-gray-300 rounded-lg">
-    <UContainer class="m-2">
+  <UContainer class="m-4 mx-6 border border-1 border-gray-300 rounded-lg">
+    <UContainer class="m-4">
       <UButton
         icon="i-heroicons-arrow-right-20-solid"
         size="sm"
@@ -28,7 +28,7 @@
         v-model="selected"
       />
       <UDropdown
-        class="m-8"
+        class="m-2"
         :items="items"
         :popper="{ placement: 'bottom-start' }"
       >
@@ -39,8 +39,8 @@
         />
       </UDropdown>
     </UContainer>
-    <UContainer class="m-8"><URange v-model="value" size="lg" /></UContainer>
-    <UAlert color="lime" variant="subtle" class="m-6">
+    <UContainer class="m-4"><URange v-model="value" size="lg" /></UContainer>
+    <UAlert color="lime" variant="subtle" class="m-4">
       <template #description>
         <div>
           <!-- <h1>Color mode: {{ $colorMode.value }}</h1> -->
