@@ -1,4 +1,5 @@
-![image](https://github.com/vtonu/MathRelationship/assets/56773210/94a0ebed-ca5a-4cb3-875f-e80fa8f29d30)
+![image](https://github.com/vtonu/MathRelationship/assets/56773210/f5aa99b1-1a3a-4d58-b36f-123d76e90ba8)
+
 
 # Nuxt 3 Math App
 
