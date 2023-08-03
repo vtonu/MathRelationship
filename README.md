@@ -1,9 +1,6 @@
-![image](https://github.com/vtonu/MathRelationship/assets/56773210/f69a1b9b-34f6-4304-bb1b-ed729ef41f6b)
+![image](https://github.com/vtonu/MathRelationship/assets/56773210/94a0ebed-ca5a-4cb3-875f-e80fa8f29d30)
 
-
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Nuxt 3 Math App
 
 ## Setup
 
@@ -63,4 +60,5 @@ pnpm run preview
 yarn preview
 ```
 
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
