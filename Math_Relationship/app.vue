@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="m-8 mx-8 border border-1 border-gray-200 rounded-lg">
+  <UContainer class="m-4 mx-6 border border-1 border-gray-200 rounded-lg">
     <UContainer>
       <UButton
         @click="playAnimation"
