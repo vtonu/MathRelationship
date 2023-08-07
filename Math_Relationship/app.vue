@@ -1,6 +1,6 @@
 <template>
-  <UContainer class="m-6 mx-8 border border-1 border-gray-200 rounded-lg py-6">
-    <UContainer>
+  <UContainer class="m-8 mx-8 border border-gray-200 rounded-lg py-4">
+    <UContainer class="flex place-items-center">
       <UButton
         @click="playAnimation"
         icon="i-heroicons-arrow-right-20-solid"
@@ -11,14 +11,12 @@
         :trailing="true"
         class="m-2"
       />
-
       <UButton
-        icon="i-heroicons-arrow-path-rounded-square-solid"
+        @click="resetAnimation"
         size="sm"
         color="primary"
         variant="solid"
-        label="RESET"
-        :trailing="true"
+        label="PULL"
         class="m-2"
       />
       <UDropdown
@@ -32,13 +30,21 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
+      <UButton
+        @click="resetAnimationIcon"
+        icon="i-heroicons-arrow-path-rounded-square-solid"
+        size="sm"
+        color="primary"
+        variant="outline"
+        class="m-2"
+      />
     </UContainer>
     <UAlert color="primary" variant="subtle" class="my-6">
       <template #description>
         <div>
-          <h1 class="title">1 <br /><br /></h1>
-          <h1 class="title">2 <br /><br /></h1>
-          <h1 class="title">3 <br /><br /></h1>
+          <h1 class="title">1<br /><br /></h1>
+          <h1 class="title">2<br /><br /></h1>
+          <h1 class="title">3<br /><br /></h1>
         </div>
       </template>
     </UAlert>
@@ -92,10 +98,31 @@ const playAnimation = () => {
   // Use Anime.js keyframes to create the animation
   $anime({
     targets: '.title',
-    translateX: 280,
+    translateX: 320,
     direction: 'alternate',
     loop: true,
     easing: 'cubicBezier(.5, .05, .1, .3)',
+  });
+};
+
+// Reset animation when RESET button is clicked
+const resetAnimation = () => {
+  $anime({
+    targets: '.title',
+    translateX: 0,
+    direction: 'alternate',
+    loop: true,
+    easing: 'cubicBezier(.5, .05, .1, .3)',
+  });
+};
+
+// Reset animation when reset icon button is clicked
+const resetAnimationIcon = () => {
+  $anime({
+    targets: '.title',
+    translateX: 0,
+    duration: 0,
+    loop: false,
   });
 };
 </script>
