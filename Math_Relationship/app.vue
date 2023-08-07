@@ -12,11 +12,19 @@
         class="m-2"
       />
       <UButton
-        @click="resetAnimation"
+        @click="pullAnimation"
         size="sm"
         color="primary"
         variant="solid"
         label="PULL"
+        class="m-2"
+      />
+      <UButton
+        @click="resetAnimationIcon"
+        icon="i-heroicons-arrow-path-rounded-square-solid"
+        size="sm"
+        color="primary"
+        variant="outline"
         class="m-2"
       />
       <UDropdown
@@ -30,21 +38,13 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
-      <UButton
-        @click="resetAnimationIcon"
-        icon="i-heroicons-arrow-path-rounded-square-solid"
-        size="sm"
-        color="primary"
-        variant="outline"
-        class="m-2"
-      />
     </UContainer>
     <UAlert color="primary" variant="subtle" class="my-6">
       <template #description>
-        <div>
-          <h1 class="title">1<br /><br /></h1>
-          <h1 class="title">2<br /><br /></h1>
-          <h1 class="title">3<br /><br /></h1>
+        <div class="numbers">
+          <h1 class="number">1<br /><br /></h1>
+          <h1 class="number">2<br /><br /></h1>
+          <h1 class="number">3<br /><br /></h1>
         </div>
       </template>
     </UAlert>
@@ -97,18 +97,23 @@ const { $anime } = useNuxtApp();
 const playAnimation = () => {
   // Use Anime.js keyframes to create the animation
   $anime({
-    targets: '.title',
+    targets: '.number',
     translateX: 320,
     direction: 'alternate',
     loop: true,
-    easing: 'cubicBezier(.5, .05, .1, .3)',
+    duration: 2000,
+    easing: function (el, i, total) {
+      return function (t) {
+        return Math.pow(Math.sin(t * (i + 1)), total);
+      };
+    },
   });
 };
 
-// Reset animation when RESET button is clicked
-const resetAnimation = () => {
+// Animation when the pull button is clicked
+const pullAnimation = () => {
   $anime({
-    targets: '.title',
+    targets: '.number',
     translateX: 0,
     direction: 'alternate',
     loop: true,
@@ -116,12 +121,11 @@ const resetAnimation = () => {
   });
 };
 
-// Reset animation when reset icon button is clicked
+// Stop animation when reset icon is clicked
 const resetAnimationIcon = () => {
   $anime({
-    targets: '.title',
+    targets: '.number',
     translateX: 0,
-    duration: 0,
     loop: false,
   });
 };
