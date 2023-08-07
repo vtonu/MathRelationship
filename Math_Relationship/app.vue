@@ -100,8 +100,8 @@ const playAnimation = () => {
     targets: '.number',
     translateX: 320,
     direction: 'alternate',
-    loop: true,
     duration: 2000,
+    loop: true,
     easing: function (el, i, total) {
       return function (t) {
         return Math.pow(Math.sin(t * (i + 1)), total);
@@ -123,10 +123,12 @@ const pullAnimation = () => {
 
 // Stop animation when reset icon is clicked
 const resetAnimationIcon = () => {
+  // Use Anime.js keyframes to create the animation
   $anime({
     targets: '.number',
     translateX: 0,
-    loop: false,
+    direction: 'alternate',
+    duration: 2000,
   });
 };
 </script>
