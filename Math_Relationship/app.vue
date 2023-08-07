@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="m-4 mx-6 border border-1 border-gray-200 rounded-lg">
+  <UContainer class="m-6 mx-8 border border-1 border-gray-200 rounded-lg py-6">
     <UContainer>
       <UButton
         @click="playAnimation"
@@ -32,16 +32,15 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
-      <UToggle
+      <!--       <UToggle
         class="m-2"
         size="sm"
         on-icon="i-heroicons-check-20-solid"
         off-icon="i-heroicons-x-mark-20-solid"
         v-model="selected"
-      />
-      <URange v-model="value" size="sm" />
+      /> -->
     </UContainer>
-    <UAlert color="primary" variant="subtle" class="my-4">
+    <UAlert color="primary" variant="subtle" class="my-6">
       <template #description>
         <div>
           <h1 class="title">1 <br /><br /></h1>
@@ -50,6 +49,7 @@
         </div>
       </template>
     </UAlert>
+    <URange v-model="value" size="sm" />
   </UContainer>
 </template>
 
