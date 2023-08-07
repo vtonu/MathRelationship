@@ -32,13 +32,6 @@
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
       </UDropdown>
-      <!--       <UToggle
-        class="m-2"
-        size="sm"
-        on-icon="i-heroicons-check-20-solid"
-        off-icon="i-heroicons-x-mark-20-solid"
-        v-model="selected"
-      /> -->
     </UContainer>
     <UAlert color="primary" variant="subtle" class="my-6">
       <template #description>
@@ -58,7 +51,6 @@
 const selected = ref(true);
 // Range slider
 const value = ref(30);
-
 // Dropdown for color mode
 import { ref } from 'vue';
 const { $colorMode } = useNuxtApp();
@@ -70,7 +62,6 @@ const items = [
       value: 'light',
       icon: 'i-heroicons-beaker',
       click: () => {
-        console.log('This should set light mode.');
         $colorMode.preference = 'light'; // Set the color mode to 'light'
       },
     },
@@ -78,7 +69,6 @@ const items = [
       label: 'Dark',
       icon: 'i-heroicons-beaker-solid',
       click: () => {
-        console.log('This should set dark mode.');
         $colorMode.preference = 'dark'; // Set the color mode to 'dark'
       },
     },
@@ -88,7 +78,6 @@ const items = [
       label: 'Sepia',
       icon: 'i-heroicons-beaker-20-solid',
       click: () => {
-        console.log('This should set sepia mode.');
         $colorMode.preference = 'sepia'; // Set the color mode to 'sepia'
       },
     },
@@ -103,7 +92,7 @@ const playAnimation = () => {
   // Use Anime.js keyframes to create the animation
   $anime({
     targets: '.title',
-    translateX: 250,
+    translateX: 280,
     direction: 'alternate',
     loop: true,
     easing: 'cubicBezier(.5, .05, .1, .3)',
