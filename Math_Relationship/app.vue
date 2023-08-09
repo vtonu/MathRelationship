@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="m-8 mx-8 border border-gray-200 rounded-lg py-4">
+  <UContainer class="m-4 mx-4 border border-gray-200 rounded-lg py-4">
     <UContainer class="flex place-items-center">
       <UButton
         @click="playAnimation"
@@ -7,16 +7,18 @@
         size="sm"
         color="primary"
         variant="solid"
-        label="TEST"
+        label="PUSH"
         :trailing="true"
         class="m-2"
       />
       <UButton
         @click="pullAnimation"
+        icon="i-heroicons-arrow-left-20-solid"
         size="sm"
         color="primary"
         variant="solid"
         label="PULL"
+        :trailing="true"
         class="m-2"
       />
       <UButton
@@ -39,7 +41,14 @@
         />
       </UDropdown>
     </UContainer>
-    <UAlert color="primary" variant="subtle" class="my-6">
+    <UAlert
+      icon="i-heroicons-command-line"
+      color="primary"
+      variant="outline"
+      class="my-4"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    />
+    <UAlert color="primary" variant="subtle" class="my-4">
       <template #description>
         <div class="numbers">
           <h1 class="number">1<br /><br /></h1>
@@ -48,7 +57,7 @@
         </div>
       </template>
     </UAlert>
-    <URange v-model="value" size="sm" />
+    <!-- <URange v-model="value" size="sm" /> -->
   </UContainer>
 </template>
 
@@ -79,7 +88,7 @@ const items = [
       },
     },
   ],
-  [
+  /*   [
     {
       label: 'Sepia',
       icon: 'i-heroicons-beaker-20-solid',
@@ -87,7 +96,7 @@ const items = [
         $colorMode.preference = 'sepia'; // Set the color mode to 'sepia'
       },
     },
-  ],
+  ], */
 ];
 
 // Animejs
