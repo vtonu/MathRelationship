@@ -1,11 +1,10 @@
-![image](https://github.com/vtonu/MathRelationship/assets/56773210/1f4a68b7-8136-4cbe-939a-a6c9c04e5ca0)
+![image](https://github.com/vtonu/MathRelationship/assets/56773210/3ad6a033-d7e6-4a8f-86e2-e20e6da8bbd3)
 
-# Nuxt 3 Math App
+# A NuxtJS Project using Vue, NuxtLabs UI & TailwindCSS
 
 ## Setup
 
-Make sure to install the dependencies:
-
+Make sure to install necessary dependencies:
 ```bash
 # npm
 npm install
@@ -20,7 +19,6 @@ yarn install
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
-
 ```bash
 # npm
 npm run dev
@@ -35,7 +33,6 @@ yarn dev
 ## Production
 
 Build the application for production:
-
 ```bash
 # npm
 npm run build
@@ -48,7 +45,6 @@ yarn build
 ```
 
 Locally preview production build:
-
 ```bash
 # npm
 npm run preview
@@ -59,6 +55,5 @@ pnpm run preview
 # yarn
 yarn preview
 ```
-
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
