@@ -1,4 +1,4 @@
-Minimal NuxtJS Project using Vue, NuxtLabs UI, TailwindCSS & Anime.JS for my Math class. v0.7
+⛺ NuxtJS Project using Vue, NuxtLabsUI, TailwindCSS & AnimeJS for my Math class. v0.7
 
 ![image](https://github.com/vtonu/MathRelationship/assets/56773210/4906be1b-5f7b-44a0-b69a-4460d89979fd)
 
