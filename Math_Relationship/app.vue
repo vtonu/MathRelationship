@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="m-4 mx-4 border border-gray-200 rounded-lg py-4">
+  <UContainer class="m-4 mx-8 border border-gray-200 rounded-lg py-4">
     <UContainer class="flex place-items-center">
       <UButton
         @click="playAnimation"
@@ -9,8 +9,7 @@
         variant="solid"
         label="PUSH"
         :trailing="true"
-        class="m-2"
-      />
+        class="m-2" />
       <UButton
         @click="pullAnimation"
         icon="i-heroicons-arrow-left-20-solid"
@@ -19,26 +18,19 @@
         variant="solid"
         label="PULL"
         :trailing="true"
-        class="m-2"
-      />
+        class="m-2" />
       <UButton
         @click="resetAnimationIcon"
         icon="i-heroicons-arrow-path-rounded-square-solid"
         size="sm"
         color="primary"
         variant="outline"
-        class="m-2"
-      />
-      <UDropdown
-        class="m-2"
-        :items="items"
-        :popper="{ placement: 'bottom-start' }"
-      >
+        class="m-2" />
+      <UDropdown class="m-2" :items="items" :popper="{ placement: 'bottom-start' }">
         <UButton
           color="white"
           label="Color Mode"
-          trailing-icon="i-heroicons-chevron-down-20-solid"
-        />
+          trailing-icon="i-heroicons-chevron-down-20-solid" />
       </UDropdown>
     </UContainer>
     <UAlert
@@ -46,8 +38,7 @@
       color="primary"
       variant="outline"
       class="my-4"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    />
+      description="Push & Pull the numbers!" />
     <UAlert color="primary" variant="subtle" class="my-4">
       <template #description>
         <div class="numbers">
