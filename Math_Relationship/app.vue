@@ -1,55 +1,64 @@
 <template>
-  <UContainer class="m-4 mx-8 border border-gray-200 rounded-lg py-4">
-    <UContainer class="flex place-items-center">
-      <UButton
-        @click="playAnimation"
-        icon="i-heroicons-arrow-right-20-solid"
-        size="sm"
-        color="primary"
-        variant="solid"
-        label="PUSH"
-        :trailing="true"
-        class="m-2" />
-      <UButton
-        @click="pullAnimation"
-        icon="i-heroicons-arrow-left-20-solid"
-        size="sm"
-        color="primary"
-        variant="solid"
-        label="PULL"
-        :trailing="true"
-        class="m-2" />
-      <UButton
-        @click="resetAnimationIcon"
-        icon="i-heroicons-arrow-path-rounded-square-solid"
-        size="sm"
+  <div class="flex items-center justify-center">
+    <UContainer class="m-4 mx-4 border border-gray-200 rounded-lg py-2">
+      <UContainer class="flex place-content-center">
+        <UButton
+          @click="playAnimation"
+          icon="i-heroicons-arrow-right-20-solid"
+          size="sm"
+          color="primary"
+          variant="solid"
+          label="PUSH"
+          :trailing="true"
+          title="Push Button"
+          class="m-2 active:scale-[0.98]" />
+        <UButton
+          @click="pullAnimation"
+          icon="i-heroicons-arrow-left-20-solid"
+          size="sm"
+          color="primary"
+          variant="solid"
+          label="PULL"
+          :trailing="true"
+          title="Pull Button"
+          class="m-2 active:scale-[0.98]" />
+        <UButton
+          @click="resetAnimationIcon"
+          icon="i-heroicons-arrow-path-rounded-square-solid"
+          size="sm"
+          color="primary"
+          variant="outline"
+          title="Reset Icon"
+          class="m-2 active:scale-[0.98]" />
+        <UDropdown
+          class="m-2"
+          :items="items"
+          :popper="{ placement: 'bottom-start' }"
+          title="Color Mode Dropdown">
+          <UButton
+            color="white"
+            label="Color Mode"
+            trailing-icon="i-heroicons-chevron-down-20-solid" />
+        </UDropdown>
+      </UContainer>
+      <UAlert
+        icon="i-heroicons-command-line"
         color="primary"
         variant="outline"
-        class="m-2" />
-      <UDropdown class="m-2" :items="items" :popper="{ placement: 'bottom-start' }">
-        <UButton
-          color="white"
-          label="Color Mode"
-          trailing-icon="i-heroicons-chevron-down-20-solid" />
-      </UDropdown>
+        class="my-4"
+        description="Push & Pull the numbers!"
+        title="" />
+      <UAlert color="primary" variant="subtle" class="my-4" title="">
+        <template #description>
+          <div class="numbers">
+            <h1 class="number">1<br /><br /></h1>
+            <h1 class="number">2<br /><br /></h1>
+            <h1 class="number">3<br /><br /></h1>
+          </div>
+        </template>
+      </UAlert>
     </UContainer>
-    <UAlert
-      icon="i-heroicons-command-line"
-      color="primary"
-      variant="outline"
-      class="my-4"
-      description="Push & Pull the numbers!" />
-    <UAlert color="primary" variant="subtle" class="my-4">
-      <template #description>
-        <div class="numbers">
-          <h1 class="number">1<br /><br /></h1>
-          <h1 class="number">2<br /><br /></h1>
-          <h1 class="number">3<br /><br /></h1>
-        </div>
-      </template>
-    </UAlert>
-    <!-- <URange v-model="value" size="sm" /> -->
-  </UContainer>
+  </div>
 </template>
 
 <script setup>
