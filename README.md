@@ -1,6 +1,6 @@
-⛺ NuxtJS Project using Vue, NuxtLabsUI, TailwindCSS & AnimeJS for my Math class. v0.7
+⛺ NuxtJS Project using Vue, NuxtLabsUI, TailwindCSS & AnimeJS (v0.8)
 
-![image](https://github.com/vtonu/MathRelationship/assets/56773210/4906be1b-5f7b-44a0-b69a-4460d89979fd)
+https://github.com/vtonu/MathRelationship/assets/56773210/ec959a07-a2a4-46eb-96fa-00162a514385
 
 # A NuxtJS Project using Vue, NuxtLabs UI & TailwindCSS
 
